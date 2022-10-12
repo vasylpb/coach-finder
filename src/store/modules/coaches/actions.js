@@ -6,8 +6,10 @@ export default {
       ...data,
     };
 
+    const { token } = context.rootGetters;
+
     const response = await fetch(
-      `https://coach-finder-e6bfc-default-rtdb.europe-west1.firebasedatabase.app/coaches/${userId}.json`,
+      `https://coach-finder-e6bfc-default-rtdb.europe-west1.firebasedatabase.app/coaches/${userId}.json?auth=${token}`,
       {
         method: 'PUT',
         body: JSON.stringify(coachData),
