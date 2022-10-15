@@ -9,7 +9,7 @@ export default {
   },
   async auth(context, payload) {
     const { mode } = payload;
-    const webApiKey = 'AIzaSyBauC8pr3un4FdDvWcfV5sQgnGDpcEZkdo';
+    const webApiKey = process.env.VUE_APP_WEB_API_KEY;
     const url =
       mode === 'signup'
         ? `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${webApiKey}`
